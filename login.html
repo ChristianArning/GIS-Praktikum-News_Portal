@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="header upper" id="np_header">
+            <h1>News Portal</h1>
+        </div>
+        <div class="header navbar">
+            <nav>
+                <ul>
+                    <li><h2><a href="index.html">Startseite</a></h2></li>
+                    <li><h3>Inland</h3></li>
+                    <li><h3>Ausland</h3></li>
+                    <li><h3>Wirtschaft</h3></li>
+                    <li><h3>Wetter</h3></li>
+                    <li><h3>Video & Audio</h3></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <form action="action_page.php" method="post">
+        <div class="imgcontainer">
+            <img src="assets/img/avatar.png" alt="Avatar" class="avatar" width="50">
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Name</b></label>
+            <input type="text" placeholder="Name eingeben" name="uname" required>
+
+            <label for="psw"><b>Passwort</b></label>
+            <input type="password" placeholder="Passwort eingeben" name="psw" required>
+
+            <button type="submit">Anmleden</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Anmeldedaten speichern
+            </label>
+        </div>
+
+        <div class="container">
+            <button type="button" class="cancelbtn">Abbrechen</button>
+            <span class="psw"><a href="#">Passwort</a> vergessen?</span>
+        </div>
+    </form>
+
+    <footer>
+        <nav>
+            <h3><a href="Impressum.html">Impressum</a></h3>
+            <h3>Kontakt</h3>
+            <h3>Datenschutzbestimmungen</h3>
+            <h3><a href="login.html">Anmelden</a></h3>
+        </nav>
+    </footer>
+</body>
+
+</html>
