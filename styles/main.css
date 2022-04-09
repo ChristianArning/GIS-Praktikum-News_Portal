@@ -4,14 +4,15 @@ body {
     color: azure;
     margin-top: 0%;
     margin-bottom: 0%;
+    background-color: #2d2d2d;
 }
 
 .content-wrapper {
-    background-color: #80acdd;
+    background-color: #393939;
     margin: auto;
     margin-top: 0%;
-    width: 60%;
-    padding: 10px;
+    width: 80%;
+    padding: 10px 10px 10px 10px;
 }
 
 header {
@@ -25,7 +26,7 @@ header {
     justify-content: flex-start;
     list-style: none;
     margin: 0;
-    background: #1565C0;
+    background: #2d2d2d;
 }
 
 .headernav ul {
@@ -46,28 +47,38 @@ header {
 }
 
 .headernav a:hover {
-    background: #1565C0;
+    background: #5a5a5a;
 }
 
-.mainpart {}
+.mainpart {
+    padding: auto;
+}
 
 .artikelbox {
     margin: 10px 0px;
     padding: 10px 20px;
-    display: flex;
-    background-color: #1565C0;
+    background-color: #2d2d2d;
+}
+
+.articleimage {
+    flex-basis: 10%;
 }
 
 .artikelbox a {
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 ul.articlelist {
-    display: flex;
     list-style-type: none;
-    list-style-position: inside;
     padding: 0%;
     margin: 0%;
+}
+
+.articletextbox {
+    padding-left: 20px;
 }
 
 .artikelboxheadline {
@@ -81,4 +92,14 @@ ul.articlelist {
     font-size: medium;
 }
 
-footer {}
+footer {
+    background-color: #2d2d2d;
+    margin-bottom: 0%;
+    padding: 10px;
+    color: azure;
+}
+
+footer a {
+    text-decoration: none;
+    color: azure;
+}
