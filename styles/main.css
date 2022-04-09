@@ -1,13 +1,29 @@
-
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     justify-content: center;
     color: azure;
     margin-top: 0%;
     margin-bottom: 0%;
     background-color: azure;
     padding-top: 140px;
+}
+
+@media (max-width: 40em) {
+    body {
+        padding-top: 200px;
+    }
+    .headlinearticleimage {
+        height: 200px;
+    }
+}
+
+@media (max-width: 20em) {
+    body {
+        padding-top: 250px;
+    }
+    .headlinearticleimage {
+        height: 100px;
+    }
 }
 
 .content-wrapper {
@@ -17,7 +33,26 @@ body {
     padding: 10px 10px 10px 10px;
 }
 
-header{
+#np_header::first-letter {
+    font-size: 40px;
+}
+
+:root {
+    --my-border-color: azure;
+}
+
+#thing {
+    position: absolute;
+    float: right;
+    right: 20%;
+    width: 50px;
+    height: 50px;
+    border-color: var(--my-border-color);
+    border-style: solid;
+    background: yellow;
+}
+
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -32,21 +67,25 @@ header{
     top: 20;
     left: 0;
     width: 100%;
-  }
-  
-  .navbar a {
+}
+
+.navbar a {
     display: inline-block;
     justify-content: center;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
-  
-  .navbar a:hover {
+    transition: background-color 0.2s, color 0.2s, padding 0.4s;
+}
+
+.navbar a:hover {
     background: azure;
     color: #2d2d2d;
-  }
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 .mainpart {
     padding: auto;
@@ -58,13 +97,13 @@ header{
     padding: 20px;
 }
 
-.headlinearticleheader{
+.headlinearticleheader {
     color: azure;
     text-decoration: none;
     text-align: left;
 }
 
-.headlinearticle a{
+.headlinearticle a {
     color: azure;
     text-decoration: none;
 }
@@ -75,7 +114,7 @@ header{
 
 .headlinearticleimage {
     width: 100%;
-    height: 400px;
+    max-height: 400px;
     object-fit: cover;
 }
 
@@ -86,7 +125,6 @@ header{
 }
 
 h2 {
-    padding-left: 20px;
     color: #2d2d2d;
     text-align: center;
 }
