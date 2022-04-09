@@ -1,15 +1,23 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     justify-content: center;
-    margin: 0% 20%;
     color: azure;
+    margin-top: 0%;
+    margin-bottom: 0%;
 }
 
 .content-wrapper {
     background-color: #80acdd;
+    margin: auto;
+    margin-top: 0%;
+    width: 60%;
+    padding: 10px;
 }
 
-header {}
+header {
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
 
 .headernav {
     display: flex;
