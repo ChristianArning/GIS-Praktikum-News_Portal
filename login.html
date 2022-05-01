@@ -12,9 +12,8 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="scripts/scripts.js" defer></script>
 </head>
 
 <body>
@@ -34,19 +33,19 @@
             </div>
         </header>
 
-        <form action="action_page.php" method="post">
+        <form>
             <div class="imgcontainer">
                 <img src="assets/img/avatar.png" alt="Avatar" class="avatar" width="50">
             </div>
 
             <div class="container">
                 <label for="uname">Name</label>
-                <input type="text" placeholder="Name eingeben" name="uname" required>
+                <input id="uname" type="text" placeholder="Name eingeben" name="uname" required>
 
                 <label for="psw">Passwort</label>
-                <input type="password" placeholder="Passwort eingeben" name="psw" required>
+                <input id="upw" type="password" placeholder="Passwort eingeben" name="psw" required>
 
-                <button type="submit">Anmleden</button>
+                <button id="loginbutton">Anmleden</button>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Anmeldedaten speichern
                 </label>
@@ -57,15 +56,16 @@
                 <span class="psw"><a href="#">Passwort</a> vergessen?</span>
             </div>
         </form>
+    </div>
 
-        <footer>
-            <nav>
-                <h4><a href="impressum.html">Impressum</a></h4>
-                <h4><a href="">Kontakt</a></h4>
-                <h4><a href="">Datenschutz</a></h4>
-                <h4><a href="login.html">Anmelden</a></h4>
-            </nav>
-        </footer>
+    <footer>
+        <nav>
+            <h4><a href="impressum.html">Impressum</a></h4>
+            <h4><a href="">Kontakt</a></h4>
+            <h4><a href="">Datenschutz</a></h4>
+            <h4><a href="login.html">Anmelden</a></h4>
+        </nav>
+    </footer>
     </div>
 </body>
 
