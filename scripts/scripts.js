@@ -49,6 +49,7 @@ for (let i = 0; i < buttons.length; i++) {
 
     button.addEventListener("click", function() {
         const action = this.dataset.action;
+        const value = this.dataset.value;
 
         switch (action) {
             case "toggle-view":
@@ -58,7 +59,7 @@ for (let i = 0; i < buttons.length; i++) {
                 execLinkAction();
                 break;
             default:
-                execDefaultAction(action);
+                execDefaultAction(action, value);
         }
     });
 }
@@ -121,8 +122,8 @@ function execLinkAction() {
     });
 }
 
-function execDefaultAction(action) {
-    document.execCommand(action, false);
+function execDefaultAction(action, value) {
+    document.execCommand(action, false, value);
 }
 
 function saveSelection() {
@@ -206,6 +207,6 @@ function pasteEvent(e) {
 function addParagraphTag(evt) {
     if (evt.keyCode == "13") {
         if (window.getSelection().anchorNode.parentNode.tagName === "LI") return;
-        document.execCommand("formatBlock", false, "p");
+        document.execCommand("formatBlock", false, "br");
     }
 }
