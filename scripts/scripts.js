@@ -297,4 +297,20 @@ function closeAllSelect(elmnt) {
     }
 }
 
+document.getElementById("SaveBT-Editor").addEventListener("click", saveArticle);
+
+function saveArticle(){
+    sendJSONStringWithPOST(
+        'http://127.0.0.1:3000/search',
+        JSON.stringify({ test: "Dies ist ein Test" })
+      );
+}
+
+async function sendJSONStringWithPOST(url, jsonString) {
+    const response = await fetch(url, {
+      method: 'post',
+      body: jsonString,
+    });
+  }
+
 document.addEventListener("click", closeAllSelect);
