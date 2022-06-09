@@ -47,7 +47,7 @@ contentArea.addEventListener("keypress", addParagraphTag);
 for (let i = 0; i < buttons.length; i++) {
     const button = buttons[i];
 
-    button.addEventListener("click", function() {
+    button.addEventListener("click", function () {
         const action = this.dataset.action;
         const value = this.dataset.value;
 
@@ -87,7 +87,7 @@ function execLinkAction() {
     const submit = modal.querySelectorAll("button.done")[0];
     const close = modal.querySelectorAll(".close")[0];
 
-    submit.addEventListener("click", function(e) {
+    submit.addEventListener("click", function (e) {
         e.preventDefault();
         const newTabCheckbox = modal.querySelectorAll("#new-tab")[0];
         const linkInput = modal.querySelectorAll("#linkValue")[0];
@@ -110,7 +110,7 @@ function execLinkAction() {
         close.removeEventListener("click", arguments.callee);
     });
 
-    close.addEventListener("click", function(e) {
+    close.addEventListener("click", function (e) {
         e.preventDefault();
         const linkInput = modal.querySelectorAll("#linkValue")[0];
 
@@ -235,7 +235,7 @@ for (i = 0; i < l; i++) {
     for (j = 1; j < ll; j++) {
         c = document.createElement("DIV");
         c.innerHTML = selElmnt.options[j].innerHTML;
-        c.addEventListener("click", function(e) {
+        c.addEventListener("click", function (e) {
             let y;
             let i;
             let k;
@@ -264,7 +264,7 @@ for (i = 0; i < l; i++) {
         b.appendChild(c);
     }
     x[i].appendChild(b);
-    a.addEventListener("click", function(e) {
+    a.addEventListener("click", function (e) {
         e.stopPropagation();
         closeAllSelect(this);
         this.nextSibling.classList.toggle("select-hide");
@@ -299,18 +299,30 @@ function closeAllSelect(elmnt) {
 
 document.getElementById("SaveBT-Editor").addEventListener("click", saveArticle);
 
-function saveArticle(){
+const article = {
+
+}
+
+function createArticleObject() {
+    execCodeAction(this, editor)
+    article = { id: "id" + Math.random().toString(16).slice(2), articleCategory: document.getElementsByClassName("select-selected"), articleText: htmlView};
+}
+
+function saveArticle() {
+    createArticleObject();
     sendJSONStringWithPOST(
         'http://127.0.0.1:3000/search',
-        JSON.stringify({ test: "Dies ist ein Test" })
-      );
+        JSON.stringify(article)
+    );
 }
 
 async function sendJSONStringWithPOST(url, jsonString) {
     const response = await fetch(url, {
-      method: 'post',
-      body: jsonString,
+        method: 'post',
+        body: jsonString,
     });
-  }
+    const content = await response.text();
+    console.log(content);
+}
 
 document.addEventListener("click", closeAllSelect);

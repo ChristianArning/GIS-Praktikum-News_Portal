@@ -20,12 +20,14 @@ const server = http.createServer((request, response) => {
             });
             request.on('end', () => {
               console.log(JSON.parse(jsonString));
+              response.end("Success!");
             });
           }
+          break;
     default:
       response.statusCode = 404;
   }
-  response.end();
+  
 });
 
 server.listen(port, hostname, () => {
