@@ -45,7 +45,7 @@ const server = http.createServer(async (request, response) => {
                 const articleCollection = mongoClient.db("newsportal").collection("article");
                 switch (request.method) {
                     case "GET":
-                        const result = await bananaCollection.find({}).toArray();
+                        const result = await articleCollection.find({}).toArray();
                         response.end(JSON.stringify(result));
                         console.log("test");
                         break;

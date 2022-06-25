@@ -8,12 +8,17 @@ async function loadArticleObject(url) {
     const content = await response.json();
     console.log(content);
 
-    for (let i=0; i<content.length; i++) {
+    let myarticlelist = document.getElementsByClassName("articlelist");
+
+    for (let i = 0; i < content.length; i++) {
         let para = document.createElement("div");
-        let node = document.createTextNode(content[i].articleText);
-        para.appendChild(node);
-        const element = document.getElementById("articlelist");
-        element.appendChild(para);
+        para.classList.add("artikelbox");
+        console.log(para);
+        let node = content[i].articleText;
+        console.log(node);
+        para.innerHTML = node;
+
+        myarticlelist[0].appendChild(para);
     }
 }
 
