@@ -3,7 +3,7 @@
 /* eslint-disable no-invalid-this */
 /* eslint-disable no-caller */
 /*
- *  Bei Verwendung der Vorlage den nachgoldenden Code bitte entfernen. Dieser dient nur zum Testen.  
+ *  Bei Verwendung der Vorlage den nachgoldenden Code bitte entfernen. Dieser dient nur zum Testen.
  */
 
 console.log("scripts.js wurde ausgeführt");
@@ -87,7 +87,7 @@ function execLinkAction() {
     const submit = modal.querySelectorAll("button.done")[0];
     const close = modal.querySelectorAll(".close")[0];
 
-    submit.addEventListener("click", function (e) {
+    submit.addEventListener("click", function(e) {
         e.preventDefault();
         const newTabCheckbox = modal.querySelectorAll("#new-tab")[0];
         const linkInput = modal.querySelectorAll("#linkValue")[0];
@@ -160,7 +160,6 @@ function selectionChange(e) {
     for (let i = 0; i < buttons.length; i++) {
         const button = buttons[i];
 
-        // don't remove active class on code toggle button
         if (button.dataset.action === "toggle-code") continue;
 
         button.classList.remove("active");
@@ -235,7 +234,7 @@ for (i = 0; i < l; i++) {
     for (j = 1; j < ll; j++) {
         c = document.createElement("DIV");
         c.innerHTML = selElmnt.options[j].innerHTML;
-        c.addEventListener("click", function (e) {
+        c.addEventListener("click", function(e) {
             let y;
             let i;
             let k;
@@ -264,7 +263,7 @@ for (i = 0; i < l; i++) {
         b.appendChild(c);
     }
     x[i].appendChild(b);
-    a.addEventListener("click", function (e) {
+    a.addEventListener("click", function(e) {
         e.stopPropagation();
         closeAllSelect(this);
         this.nextSibling.classList.toggle("select-hide");
@@ -278,7 +277,7 @@ function closeAllSelect(elmnt) {
     let i;
     let xl;
     let yl;
-    let arrNo = [];
+    const arrNo = [];
     x = document.getElementsByClassName("select-items");
     y = document.getElementsByClassName("select-selected");
     xl = x.length;
@@ -299,27 +298,37 @@ function closeAllSelect(elmnt) {
 
 document.getElementById("SaveBT-Editor").addEventListener("click", saveArticle);
 
-const article = {
+document.getElementById("LoadBT-Editor").addEventListener("click", loadArticle);
+
+function loadArticle() {
+    loadArticleObject("http://127.0.0.1:3000/articleobj");
 
 }
 
+let article = {
+
+};
+
 function createArticleObject() {
-    execCodeAction(this, editor)
-    article = { id: "id" + Math.random().toString(16).slice(2), articleCategory: document.getElementsByClassName("select-selected"), articleText: htmlView};
+    const category = document.getElementsByClassName("select-selected")[0].textContent;
+
+    const text = visuellView.innerHTML;
+    article = { articleCategory: category, articleText: text };
+    console.log(article);
 }
 
 function saveArticle() {
     createArticleObject();
     sendJSONStringWithPOST(
-        'http://127.0.0.1:3000/search',
+        "http://127.0.0.1:3000/articleobj",
         JSON.stringify(article)
     );
 }
 
 async function sendJSONStringWithPOST(url, jsonString) {
     const response = await fetch(url, {
-        method: 'post',
-        body: jsonString,
+        method: "post",
+        body: jsonString
     });
     const content = await response.text();
     console.log(content);
