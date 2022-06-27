@@ -59,6 +59,7 @@ header {
     text-align: center;
     width: 100%;
     background-color: #2d2d2d;
+    z-index:9999;
 }
 
 .navbar {
@@ -163,7 +164,7 @@ ul.articlelist {
     min-height: 18rem;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
     border-top: 0px solid #4a4a4a;
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 .wp-webdeasy-comment-editor .toolbar {
@@ -421,4 +422,37 @@ footer a {
 .select-items div:hover,
 .same-as-selected {
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+#SaveBT-Editor {
+    background-color: #2d2d2d;
+    color: azure;
+    height: 35px;
+    width: 70px;
+    font-size: medium;
+    margin-right: 5px;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+}
+
+#SaveBT-Editor:hover {
+    background-color: #1d1d1d;
+    transition: 0.3s ease all;
+}
+
+#LoadBT-Editor {
+    background-color: #2d2d2d;
+    color: azure;
+    height: 35px;
+    width: 70px;
+    font-size: medium;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+}
+
+#LoadBT-Editor:hover {
+    background-color: #1d1d1d;
+    transition: 0.3s ease all;
+}
+
+#save_load-buttons {
+    margin-bottom: 20px;
 }
