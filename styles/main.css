@@ -131,10 +131,12 @@ header {
 }
 
 .artikelbox a {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    text-decoration-style: dotted;
+    color: azure
+}
+
+.artikelbox a:hover {
+    color: rgb(255, 255, 255);
 }
 
 ul.articlelist {

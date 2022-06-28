@@ -14,7 +14,7 @@ async function loadArticleObject(url) {
         let para = document.createElement("div");
         para.classList.add("artikelbox");
         console.log(para);
-        let node = content[i].articleText;
+        let node = content[content.length - 1 - i].articleText;
         console.log(node);
         para.innerHTML = node;
 
